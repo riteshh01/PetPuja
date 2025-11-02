@@ -1,0 +1,205 @@
+.food-item {
+  width: 260px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #ffffff, #f3f3f3);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  animation: fadeIn 0.8s ease;
+}
+
+.food-item:hover {
+  /* transform: translateY(-7px); */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.food-item-img-container {
+  width: 100%;
+  height: 170px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.food-item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.food-item:hover .food-item-image {
+  transform: scale(1.1);
+  filter: brightness(1.05);
+}
+
+.food-item-info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 160px;
+}
+
+.food-item-name-rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.food-item-name-rating p {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #222;
+}
+
+.food-item-name-rating img {
+  width: 80px;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+.food-item-desc {
+  margin: 10px 0;
+  font-size: 0.9rem;
+  color: #807f7f;
+  min-height: 40px;
+  line-height: 1.4;
+}
+
+.food-item-price {
+  align-self: flex-start;
+  background: linear-gradient(135deg, #f7872d, #ff9c5b);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(255, 99, 71, 0.3);
+}
+
+.food-item-price:hover {
+  background: linear-gradient(135deg, #ff6a00, #ff3b2e);
+  box-shadow: 0 5px 12px rgba(255, 99, 71, 0.45);
+}
+
+.food-item-img-container {
+  position: relative;
+}
+
+
+.food-price-add {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+/* Inline Add Button (when itemCount = 0) */
+.add-btn-inline {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #f7872d, #ff9c5b);
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(247, 135, 45, 0.4);
+}
+
+.add-btn-inline:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #ff6a00, #ff3b2e);
+}
+
+/* Inline Counter */
+.food-item-counter-inline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100px;
+  background-color: #fff;
+  border-radius: 25px;
+  padding: 6px 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.food-item-counter-inline img {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.food-item-counter-inline img:hover {
+  transform: scale(1.15);
+}
+
+.food-item-counter-inline p {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin: 0;
+  color: #333;
+}
+
+
+/* Dark Mode Feature */
+
+body.dark .food-item {
+  background: linear-gradient(145deg, #1f1f1f, #2a2a2a);
+  box-shadow: 0 4px 18px rgba(255, 255, 255, 0.08);
+}
+
+body.dark .food-item-name-rating p {
+  color: #f1f1f1;
+}
+
+body.dark .food-item-desc {
+  color: #bbb;
+}
+
+body.dark .food-item-price {
+  background: linear-gradient(135deg, #f7872d, #ff9c5b);
+  box-shadow: 0 3px 10px rgba(255, 100, 80, 0.4);
+  transition: 0.6s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark .food-item-price:hover {
+  background: linear-gradient(135deg, #ff6a00, #ff3b2e);
+  box-shadow: 0 5px 12px rgba(255, 99, 71, 0.45);
+}
+
+body.dark .food-item-counter-inline {
+  background-color: #2b2b2b;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+}
+
+body.dark .food-item-counter-inline p {
+  color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+  .food-item {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .food-item {
+    width: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
