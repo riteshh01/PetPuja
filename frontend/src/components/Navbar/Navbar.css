@@ -1,8 +1,10 @@
+/* --- Original Styles (No Changes) --- */
 .navbar{
     padding: 20px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative; /* Added for mobile dropdown positioning */
 }
 
 .navbar .logo{
@@ -24,8 +26,15 @@
     gap: 40px;
 }
 
+/* Container for desktop-only items */
+.navbar-right-desktop-items {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
 .navbar button{
-     background-color: #f7872d; 
+    background-color: #f7872d; 
     color: white;            
     padding: 12px 24px;        
     font-size: 14px;           
@@ -84,9 +93,7 @@
 }
 
 
-/* Dark Mode */
-
-
+/* --- Dark Mode (No Changes) --- */
 body.dark {
     background-color: #111111;
     color: #f9f9f9;
@@ -103,4 +110,125 @@ body.dark .navbar-menu li {
 
 body.dark .navbar .active {
     border-bottom: 2px solid #ff9933;
+}
+
+
+/* --- NEW: Responsive Styles --- */
+
+/* Hamburger/Close Icon (Mobile Only) */
+.navbar-toggle-icon {
+    display: none !important; /* Hidden on desktop */
+    font-size: 24px;
+    color: #f7872d;
+    cursor: pointer;
+}
+
+/* Mobile Dropdown Menu Container */
+.navbar-mobile-dropdown {
+    position: absolute;
+    top: 100%; /* Position below the navbar */
+    right: 0;
+    width: 300px; /* Adjust width as needed */
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 20px;
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    gap: 20px;
+    z-index: 100;
+    transition: all 0.3s ease-out;
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.navbar-mobile-dropdown.active {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Mobile Menu List */
+.navbar-mobile-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.navbar-mobile-menu li {
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.navbar-mobile-menu li:hover {
+    background-color: #f0f0f0;
+}
+
+/* Mobile Right Section (inside dropdown) */
+.navbar-mobile-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.navbar-mobile-right .switch-container { /* Assuming Switch has a wrapper */
+    margin: 0;
+}
+
+.navbar-mobile-right button {
+    width: 40%; /* Make button full-width in dropdown */
+    margin-bottom: 16px;
+}
+
+/* Dark Mode for Mobile Dropdown */
+body.dark .navbar-mobile-dropdown {
+    background-color: #222;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+body.dark .navbar-mobile-menu li {
+    color: #fff;
+}
+body.dark .navbar-mobile-menu li:hover {
+    background-color: #333;
+}
+body.dark .navbar-mobile-right {
+    border-top-color: #444;
+}
+
+
+/* --- Media Query (Breakpoint) --- */
+@media (max-width: 900px) {
+
+    /* Hide desktop menu */
+    .navbar-menu {
+        display: none;
+    }
+
+    /* Hide desktop switch and button */
+    .navbar-right-desktop-items {
+        display: none;
+    }
+
+    /* Show mobile hamburger icon */
+    .navbar-toggle-icon {
+        display: block !important;
+    }
+
+    /* Adjust navbar-right gap for mobile */
+    .navbar-right {
+        gap: 20px;
+    }
 }
