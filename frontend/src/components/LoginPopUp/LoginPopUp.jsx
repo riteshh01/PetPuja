@@ -3,10 +3,12 @@ import './LoginPopUp.css'
 
 const LoginPopUp = () => {
   return (
-    <div>
-        <h1>This is the login page</h1>
+    <div className='login-popup'>
+        <form className="login-popup-container">
+<h1>ritesh</h1>
+        </form>
     </div>
   )
 }
 
-export default LoginPopUp
+export default LoginPopUp 

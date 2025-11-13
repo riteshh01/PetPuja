@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import './Navbar.css'
 import { assets } from '../../assets/assets'
 import Switch from '../Switch/Switch';
-const Navbar = () => {
+
+const Navbar = ({setShowLogin}) => {
     const [menu, setMenu] = useState("home");
     const [mobileMenu, setMobileMenu] = useState(false);
 
@@ -25,7 +26,7 @@ const Navbar = () => {
                 <li onClick={() => handleLinkClick("contact-us")} className={menu === "contact-us" ? "active" : ""}>Contact Us</li>
             </ul>
 
-            {/* Right Side (Desktop */}
+            {/* Right Side (Desktop) */}
             <div className="navbar-right">
                 <i className="fa-solid fa-magnifying-glass search-icon" style={{ color: "#f9872a", fontSize: "25px" }}></i>
                 <div className="navbar-search-icon">
@@ -36,7 +37,7 @@ const Navbar = () => {
                 {/* These two are hidden on mobile and moved to the dropdown */}
                 <div className="navbar-right-desktop-items">
                     <Switch />
-                    <button>Sign In</button>
+                    <button onClick={()=>setShowLogin(true)}>Sign In</button>
                 </div>
 
                 {/* Hamburger Toggle Icon (Mobile Only) */}
