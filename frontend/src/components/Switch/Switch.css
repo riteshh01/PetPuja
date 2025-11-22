@@ -22,8 +22,8 @@
 .st-sunMoonThemeToggleBtn svg {
     position: absolute;
     left: 0;
-    width: 50%;
-    height: 50%;
+    width: 140%;
+    height: 70%;
     transition: transform 0.4s ease;
     transform: rotate(40deg);
 }
