@@ -1,0 +1,82 @@
+/* --- Cart Container --- */
+.cart {
+  margin-top: 100px; /* Top margin taaki Navbar ke neeche na dabe */
+  margin-bottom: 50px;
+  padding: 0 8%; /* Side padding */
+}
+
+/* --- Table Headers & Rows Layout --- */
+/* Dono header aur items ke liye same grid layout use kiya hai */
+.cart-items-title {
+  display: grid;
+  /* 6 Columns: Image | Title | Price | Qty | Total | Remove */
+  grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 0.5fr;
+  align-items: center;
+  color: #808080; /* Headers ke liye grey color */
+  font-size: max(1vw, 12px);
+}
+
+/* --- Cart Item Specific Styling --- */
+.cart-items-item {
+  margin: 10px 0;
+  color: #000; /* Item text dark rahega */
+  font-weight: 500;
+}
+
+/* Image styling */
+.cart-items-item img {
+  width: 50px;
+  border-radius: 8px; /* Thoda rounded corners achha dikhega */
+}
+
+/* Horizontal Line */
+.cart hr {
+  height: 1px;
+  background-color: #e2e2e2;
+  border: none;
+  margin: 10px 0;
+}
+
+/* Remove Icon Styling */
+.fa-trash-can {
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.fa-trash-can:hover {
+  transform: scale(1.1);
+  color: #ff4d4d !important; /* Hover pe thoda dark red/orange */
+}
+
+.cart hr{
+    height: 1px;
+    background-color: #e2e2e2;
+    border: none;
+}
+
+/* --- Responsive Design (Mobile) --- */
+@media (max-width: 768px) {
+  .cart {
+    padding: 0 4%; /* Mobile pe padding kam */
+  }
+
+  .cart-items-title {
+    /* Mobile pe columns ko adjust kiya hai taaki content kate nahi */
+    grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 0.5fr;
+    font-size: 10px; /* Font chhota kiya */
+    gap: 5px;
+  }
+
+  .cart-items-item img {
+    width: 35px; /* Mobile pe image chhoti */
+  }
+}
+
+/* Very Small Screens (Phones) */
+@media (max-width: 480px) {
+  .cart-items-title {
+    /* Title ko thoda aur space diya, baaki adjust kiye */
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 0.5fr;
+    font-size: 9px;
+  }
+}

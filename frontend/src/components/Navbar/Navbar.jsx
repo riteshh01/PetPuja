@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './Navbar.css'
 import { assets } from '../../assets/assets'
 import Switch from '../Switch/Switch';
+import {Link} from 'react-router-dom'
 
 const Navbar = ({setShowLogin}) => {
     const [menu, setMenu] = useState("home");
@@ -15,7 +16,7 @@ const Navbar = ({setShowLogin}) => {
 
     return (
         <div className='navbar'>
-            <img src={assets.logo1} alt="" className='logo' />
+            <Link to='/'><img src={assets.logo1} alt="" className='logo' /></Link>
 
 
             {/* This menu is hidden on mobile and replaced by the mobile-show version */}
@@ -30,7 +31,7 @@ const Navbar = ({setShowLogin}) => {
             <div className="navbar-right">
                 <i className="fa-solid fa-magnifying-glass search-icon" style={{ color: "#f9872a", fontSize: "25px" }}></i>
                 <div className="navbar-search-icon">
-                    <i className="fa-solid fa-cart-shopping cart-icon" style={{ color: "#f9872a", fontSize: "25px" }}></i>
+                    <Link to='/cart'><i className="fa-solid fa-cart-shopping cart-icon" style={{ color: "#f9872a", fontSize: "25px" }}></i></Link>
                     <div className="dot"></div>
                 </div>
                 
