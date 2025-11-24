@@ -1,32 +1,28 @@
 /* --- Cart Container --- */
 .cart {
-  margin-top: 100px; /* Top margin taaki Navbar ke neeche na dabe */
+  margin-top: 100px;
   margin-bottom: 50px;
-  padding: 0 8%; /* Side padding */
+  padding: 0 8%; 
 }
 
-/* --- Table Headers & Rows Layout --- */
-/* Dono header aur items ke liye same grid layout use kiya hai */
+/* --- Table Headers & Items Layout --- */
 .cart-items-title {
   display: grid;
-  /* 6 Columns: Image | Title | Price | Qty | Total | Remove */
   grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 0.5fr;
   align-items: center;
-  color: #808080; /* Headers ke liye grey color */
+  color: #808080;
   font-size: max(1vw, 12px);
 }
 
-/* --- Cart Item Specific Styling --- */
 .cart-items-item {
   margin: 10px 0;
-  color: #000; /* Item text dark rahega */
+  color: #000;
   font-weight: 500;
 }
 
-/* Image styling */
 .cart-items-item img {
   width: 50px;
-  border-radius: 8px; /* Thoda rounded corners achha dikhega */
+  border-radius: 8px;
 }
 
 /* Horizontal Line */
@@ -37,46 +33,158 @@
   margin: 10px 0;
 }
 
-/* Remove Icon Styling */
+/* Remove Icon */
 .fa-trash-can {
   cursor: pointer;
   transition: transform 0.2s, color 0.2s;
 }
-
 .fa-trash-can:hover {
   transform: scale(1.1);
-  color: #ff4d4d !important; /* Hover pe thoda dark red/orange */
+  color: #ff4d4d !important;
 }
 
-.cart hr{
-    height: 1px;
-    background-color: #e2e2e2;
-    border: none;
+/* --- NEW: Cart Bottom Section (Totals & Promo) --- */
+.cart-bottom {
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-between;
+  gap: max(12vw, 20px); /* Responsive gap */
+}
+
+/* --- Cart Totals Section --- */
+.cart-total {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cart-total h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.cart-total-details {
+  display: flex;
+  justify-content: space-between;
+  color: #555;
+  border-bottom: 1px solid #e2e2e2;
+  padding: 10px 0;
+}
+
+/* Checkout Button */
+.cart-total button {
+  border: none;
+  color: white;
+  background-color: #f7872d; /* Tomato Theme Color */
+  width: max(15vw, 200px);
+  padding: 12px 0;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.cart-total button:hover {
+  background-color: #e06d1b;
+  transform: translateY(-2px);
+}
+
+/* ============================= */
+/*        PROMO CODE BOX         */
+/* ============================= */
+
+.cart-promocode {
+  flex: 1;
+  border: 1px solid #e2e2e2;
+  padding: 22px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 0 12px rgba(0,0,0,0.07);
+}
+
+.cart-promocode p {
+  font-size: 16px;
+  color: #444;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.cart-promocode input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  border-radius: 8px;
+  outline: none;
+  margin-bottom: 15px;
+  transition: 0.2s ease;
+}
+
+.cart-promocode input:focus {
+  border-color: #f9872a;
+  box-shadow: 0 0 6px rgba(249,135,42,0.4);
+}
+
+.cart-promocode button {
+  width: 100%;
+  padding: 12px;
+  background-color: #f9872a;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.cart-promocode button:hover {
+  background-color: #e27420;
+  transform: translateY(-2px);
+}
+
+/* Dark Mode functionality */
+
+body.dark .cart-promocode{
+    background-color: #111111;
+}
+
+body.dark .cart-promocode p{
+    color: white;
 }
 
 /* --- Responsive Design (Mobile) --- */
 @media (max-width: 768px) {
-  .cart {
-    padding: 0 4%; /* Mobile pe padding kam */
-  }
+  .cart { padding: 0 4%; }
 
+  /* Items table adjust */
   .cart-items-title {
-    /* Mobile pe columns ko adjust kiya hai taaki content kate nahi */
     grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 0.5fr;
-    font-size: 10px; /* Font chhota kiya */
+    font-size: 10px;
     gap: 5px;
   }
+  .cart-items-item img { width: 35px; }
 
-  .cart-items-item img {
-    width: 35px; /* Mobile pe image chhoti */
+  /* Bottom section stack */
+  .cart-bottom {
+    flex-direction: column-reverse; /* Promo code niche, Total upar ya vice-versa */
+    gap: 50px;
   }
-}
-
-/* Very Small Screens (Phones) */
-@media (max-width: 480px) {
-  .cart-items-title {
-    /* Title ko thoda aur space diya, baaki adjust kiye */
-    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 0.5fr;
-    font-size: 9px;
+  
+  .cart-promocode {
+    justify-content: start;
+  }
+  
+  /* Buttons full width on mobile */
+  .cart-total button, .cart-promocode button {
+    width: 100%;
+    padding: 15px 0;
+  }
+  
+  .cart-promocode input {
+    font-size: 16px; /* Prevent zoom on iOS */
   }
 }

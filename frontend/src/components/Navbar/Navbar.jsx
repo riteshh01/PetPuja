@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './Navbar.css'
 import { assets } from '../../assets/assets'
 import Switch from '../Switch/Switch';
 import {Link} from 'react-router-dom'
+import { StoreContext } from '../../context/StoreContext';
 
 const Navbar = ({setShowLogin}) => {
     const [menu, setMenu] = useState("home");
     const [mobileMenu, setMobileMenu] = useState(false);
+    const {getTotalCartAmount} = useContext(StoreContext);
 
     // Helper function to handle link click and close mobile menu
     const handleLinkClick = (menuName) => {
@@ -32,7 +34,7 @@ const Navbar = ({setShowLogin}) => {
                 <i className="fa-solid fa-magnifying-glass search-icon" style={{ color: "#f9872a", fontSize: "25px" }}></i>
                 <div className="navbar-search-icon">
                     <Link to='/cart'><i className="fa-solid fa-cart-shopping cart-icon" style={{ color: "#f9872a", fontSize: "25px" }}></i></Link>
-                    <div className="dot"></div>
+                    <div className={getTotalCartAmount() === 0? "" : "dot"}></div>
                 </div>
                 
                 {/* These two are hidden on mobile and moved to the dropdown */}
