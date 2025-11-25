@@ -1,5 +1,5 @@
 import express from "express"
-import { addFood, listFood } from "../controllers/foodController.js" // image upload hone ke baad data ko mogodb me save krne ke liye use hoga
+import { addFood, listFood, removeFood } from "../controllers/foodController.js" // image upload hone ke baad data ko mogodb me save krne ke liye use hoga
 import multer from "multer" // ye file uploading ke liye use hota hai
 
 
@@ -19,7 +19,8 @@ const upload = multer({storage: storage}); // multer ko initialize kiya aur usme
 
 
 foodRouter.post("/add", upload.single("image"), addFood);
-foodRouter.get("/list", listFood)
+foodRouter.get("/list", listFood);
+foodRouter.post("/remove", removeFood);
 
 
 export default foodRouter;

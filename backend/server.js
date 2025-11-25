@@ -6,7 +6,7 @@ import foodRouter from "./routes/foodRoute.js";
 dotenv.config(); // it is going to search the .env file in the project root folder
 
 
-// app cofig 
+// app config 
 const app = express()
 const PORT = process.env.PORT || 4000;
 
@@ -20,8 +20,8 @@ connectDB();
 
 
 // api end points
-app.use("/api/food", foodRouter)
-
+app.use("/api/food", foodRouter);
+app.use("/images", express.static('uploads'));
 
 
 app.get("/", (req, res)=>{
