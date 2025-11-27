@@ -47,7 +47,7 @@
 }
 
 .navbar button:hover {
-    background-color: #e6731f;
+    background-color: #f7872d;
     transform: translateY(-2px);
     box-shadow: 0 6px 10px rgba(0,0,0,0.15);
 }
