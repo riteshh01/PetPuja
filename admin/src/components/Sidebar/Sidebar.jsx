@@ -1,6 +1,7 @@
 import React from "react";
 import "./sidebar.css";
 import { Home, ShoppingCart, Users, Settings, LogOut, CirclePlus } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   return (
@@ -9,21 +10,22 @@ const Sidebar = () => {
         <h2 className="sidebar-title">Admin Panel</h2>
 
         <ul className="sidebar-menu">
-          <li className="sidebar-item">
+          <NavLink to='/dashboard' className="sidebar-item">
             <Home size={20} /> <span>Dashboard</span>
-          </li>
-          
-          <li className="sidebar-item">
-            <CirclePlus size={20}/> <span>Add Items</span>
-          </li>
-          
-          <li className="sidebar-item">
-            <ShoppingCart size={20} /> <span>Orders</span>
-          </li>
+          </NavLink>
 
-          <li className="sidebar-item">
+          <NavLink to='/add' className="sidebar-item">
+            <CirclePlus size={20} /> <span>Add Items</span>
+          </NavLink>
+
+          <NavLink to='/list' className="sidebar-item">
+            <ShoppingCart size={20} /> <span>Orders</span>
+          </NavLink>
+          
+
+          <NavLink to='/orders' className="sidebar-item">
             <Users size={20} /> <span>Users</span>
-          </li>
+          </NavLink>
         </ul>
       </div>
 
