@@ -6,6 +6,8 @@ import Add from './pages/Add/Add.jsx'
 import List from './pages/List/List.jsx'
 import Orders from './pages/Orders/Orders.jsx'
 import Dashboard from './pages/Dashboard/Dashboard.jsx'
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   return (
@@ -20,6 +22,13 @@ const App = () => {
           <Route path="/list" element={<List/>}/>
           <Route path="/orders" element={<Orders/>}/>
       </Routes>
+      <ToastContainer
+          position="top-right"
+          autoClose={2000}
+          className="custom-toast-container"
+          toastClassName="custom-toast"
+          bodyClassName="custom-toast-body"
+      />
       </div>
     </div>
   )

@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-
 *{
   padding: 0;
   margin: 0;
@@ -28,4 +27,31 @@ hr{
 
 .app-content{
   display: flex;
+}
+
+
+
+/* toast message */
+.custom-toast {
+  background: #ffffff;
+  color: #222;
+  border-radius: 8px;
+  border-left: 5px solid #4caf50;
+}
+
+.custom-toast-body {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Dark Mode */
+body.dark .custom-toast {
+  background: #1e1e1e;
+  color: #f3f3f3;
+  border-left: 5px solid #ff9800;
+}
+
+body.dark .custom-toast-body {
+  font-size: 14px;
+  font-weight: 500;
 }

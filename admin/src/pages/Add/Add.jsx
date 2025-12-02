@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import "./Add.css";
 import { assets } from "../../assets/assets.js";
 import axios from "axios"
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
 const Add = () => {
     const url = "http://localhost:4000";
@@ -55,7 +54,7 @@ const Add = () => {
 
   return (
     <div className="add">
-      <form onSubmit={onSubmitHandler}>
+      <form onSubmit={onSubmitHandler} encType="multipart/form-data">
           <h2 className="add-title">Add New Product</h2>
 
           <div className="add-card">
@@ -65,7 +64,15 @@ const Add = () => {
               <p className="label">Upload Image</p>
               <label className="upload-box">
                 <img src={image? URL.createObjectURL(image) :assets.upload_area} alt="upload" />
-                <input onChange={(e)=>setImage(e.target.files[0])} type="file" hidden />
+                <input
+                    type="file"
+                    name="image"
+                    onChange={(e) => {
+                        // console.log("IMAGE SELECTED:", e.target.files[0]);
+                        setImage(e.target.files[0]);
+                    }}
+                    hidden
+                />
               </label>
             </div>
 
@@ -109,7 +116,6 @@ const Add = () => {
             </div>
           </div>
       </form>
-      <ToastContainer position="top-right" />
     </div>
   );
 };

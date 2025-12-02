@@ -1,0 +1,124 @@
+.list-page {
+  width: 100%;
+  padding: 20px;
+}
+
+.list-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Table Wrapper */
+.list-table {
+  width: 100%;
+  overflow-x: auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+}
+
+thead {
+  background: #f2f2f2;
+}
+
+th {
+  padding: 14px;
+  text-align: left;
+  font-weight: 600;
+  color: #444;
+  font-size: 14px;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+/* Image */
+.list-img {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Description column */
+.desc {
+  max-width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Delete Button */
+.delete-btn {
+  padding: 7px 12px;
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.delete-btn:hover {
+  background: #e03d3d;
+}
+
+/* Empty Text */
+.no-items {
+  padding: 20px;
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .list-title {
+    font-size: 22px;
+  }
+}
+
+/* Dark Mode */
+body.dark .list-title {
+  color: #e0e0e0;
+}
+
+body.dark .list-table {
+  background: #1f1f1f;
+  box-shadow: 0 0 5px rgba(255,255,255,0.05);
+}
+
+body.dark thead {
+  background: #2a2a2a;
+}
+
+body.dark th {
+  color: #ddd;
+}
+
+body.dark td {
+  color: #ccc;
+  border-color: #333;
+}
+
+body.dark .no-items {
+  color: #aaa;
+}
+
+body.dark .delete-btn {
+  background: #d64040;
+}

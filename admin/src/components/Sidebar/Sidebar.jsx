@@ -1,6 +1,6 @@
 import React from "react";
 import "./sidebar.css";
-import { Home, ShoppingCart, Users, Settings, LogOut, CirclePlus } from "lucide-react";
+import { Home, ShoppingCart, Users, NotebookTabs, LogOut, CirclePlus } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
@@ -19,12 +19,12 @@ const Sidebar = () => {
           </NavLink>
 
           <NavLink to='/list' className="sidebar-item">
-            <ShoppingCart size={20} /> <span>Orders</span>
+            <NotebookTabs size={20} /> <span>List Items</span>
           </NavLink>
           
 
           <NavLink to='/orders' className="sidebar-item">
-            <Users size={20} /> <span>Users</span>
+            <Users size={20} /> <span>Orders</span>
           </NavLink>
         </ul>
       </div>
