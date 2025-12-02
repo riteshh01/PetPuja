@@ -3,6 +3,7 @@ import cors from "cors"
 import { connectDB } from "./config/db.js"
 import dotenv from "dotenv";
 import foodRouter from "./routes/foodRoute.js";
+import userRouter from "./routes/userRoute.js";
 dotenv.config(); // it is going to search the .env file in the project root folder
 
 
@@ -22,6 +23,7 @@ connectDB();
 // api end points
 app.use("/api/food", foodRouter);
 app.use("/images", express.static('uploads'));
+app.use("/api/user", userRouter);
 
 
 app.get("/", (req, res)=>{
