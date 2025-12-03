@@ -1,6 +1,6 @@
 /* --- Original Styles (No Changes) --- */
 .navbar{
-    padding: 20px 0;
+    padding: 15px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -13,9 +13,11 @@
 }
 
 .navbar-menu{
+    margin: 0;
+    padding: 0;
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 26px;
     color: black;
     font-size: 18px;
 }
@@ -23,14 +25,14 @@
 .navbar-right{
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 54px;
 }
 
 /* Container for desktop-only items */
 .navbar-right-desktop-items {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 4px;
 }
 
 .navbar button{
@@ -77,21 +79,6 @@
 .navbar li{
     cursor: pointer;
 }
-
-.navbar-search-icon{
-    position: relative;
-}
-
-.navbar-search-icon .dot{
-    position: absolute;
-    min-width: 8px;
-    min-height: 8px;
-    background-color: #eea263;
-    border-radius: 5px;
-    top: -6px;
-    right: -6px;
-}
-
 
 /* --- Dark Mode (No Changes) --- */
 body.dark {
@@ -205,6 +192,86 @@ body.dark .navbar-mobile-menu li:hover {
     background-color: #333;
 }
 body.dark .navbar-mobile-right {
+    border-top-color: #444;
+}
+
+
+
+/* --- PROFILE DROPDOWN --- */
+.navbar-profile {
+    position: relative;
+    cursor: pointer;
+}
+
+.profile-icon {
+    transition: transform 0.2s ease;
+}
+
+.profile-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Dropdown Hidden by Default */
+.nav-profile-dropdown {
+    position: absolute;
+    top: 34px; /* ↓ was 45px — pulling closer removes the gap */
+    right: 0;
+    background: white;
+    border-radius: 10px;
+    padding: 12px 0;
+    width: 160px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    list-style: none;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-6px); /* ↓ was -8px, smoother transition */
+    transition: all 0.25s ease-in-out;
+    z-index: 100;
+}
+
+/* Show Dropdown on Hover */
+.navbar-profile:hover .nav-profile-dropdown {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/* Dropdown Items */
+.nav-profile-dropdown li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background 0.2s;
+}
+
+.nav-profile-dropdown li:hover {
+    background: #f7f7f7;
+}
+
+.nav-profile-dropdown hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 6px 0;
+}
+
+/* --- Dark Mode Dropdown --- */
+body.dark .nav-profile-dropdown {
+    background: #222;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+body.dark .nav-profile-dropdown li {
+    color: #f9f9f9;
+}
+
+body.dark .nav-profile-dropdown li:hover {
+    background: #333;
+}
+
+body.dark .nav-profile-dropdown hr {
     border-top-color: #444;
 }
 

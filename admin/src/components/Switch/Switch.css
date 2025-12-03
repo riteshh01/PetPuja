@@ -1,5 +1,5 @@
  .switch {
-   --secondary-container: #ffd1ac;
+   --secondary-container: #46403b;
    --primary: #fa7a12;
    font-size: 14px;
    position: relative;
@@ -22,7 +22,7 @@
    left: 0;
    right: 0;
    bottom: 0;
-   background-color: #313033;
+   background-color: #ffd1ac;
    transition: .2s;
    border-radius: 30px;
   }
