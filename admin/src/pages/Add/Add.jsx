@@ -94,14 +94,19 @@ const Add = () => {
               <div className="input-group">
                 <label>Category</label>
                 <select name="category" onChange={onChangeHandler} value={data.category}>
-                    <option value="Salad">Salad</option>
+                    <option value="Burger">Burger</option>
+                    <option value="Ice Cream">Ice Cream</option>
                     <option value="Rolls">Rolls</option>
-                    <option value="Deserts">Deserts</option>
-                    <option value="Sandwich">Sandwich</option>
-                    <option value="Cake">Cake</option>
-                    <option value="Pure Veg">Pure Veg</option>
+                    <option value="Veg Thali">Veg Thali</option>
+                    <option value="Sweets">Sweets</option>
+                    <option value="Salad">Salad</option>
                     <option value="Pasta">Pasta</option>
-                    <option value="Noodles">Noodles</option>
+                    <option value="Southern">Southern</option>
+                    <option value="Biryani">Biryani</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Pizza">Pizza</option>
+                    <option value="Pasta">Pasta</option>
+                    <option value="Cake">Cake</option>
                 </select>
               </div>
 
