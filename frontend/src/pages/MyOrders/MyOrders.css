@@ -1,0 +1,98 @@
+/* Main wrapper */
+.my-orders {
+    margin: 40px 0;
+    padding: 0 20px;
+}
+
+.my-orders h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Grid layout */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    gap: 20px;
+}
+
+/* Rectangle Card */
+.my-orders-order {
+    background: #fff;
+    border-radius: 4px;      /* 🔥 Very small radius for a rectangular look */
+    padding: 18px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1.5px solid #eaeaea; 
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.05);
+    transition: 0.3s ease;
+}
+
+.my-orders-order:hover {
+    transform: translateY(-3px);
+    border-color: #f7872d;
+}
+
+/* Text inside cards */
+.my-orders-order p {
+    margin: 3px 0;
+    font-size: 15px;
+    color: #444;
+}
+
+/* Status row */
+.my-orders-order p:last-child {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.my-orders-order p span {
+    font-size: 20px;
+    font-weight: 600;
+    color: #f7872d;
+}
+
+/* Track Order Button */
+.my-orders-order button {
+    margin-top: 12px;
+    padding: 10px 12px;
+    background-color: #f7872d;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 4px; /* Slight rounding */
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.my-orders-order button:hover {
+    background-color: #e46f15;
+}
+
+/* 🔥 Dark Mode */
+body.dark .my-orders-order {
+    background: #222;
+    border-color: #333;
+    color: #fff;
+}
+
+body.dark .my-orders h2 {
+    color: #fff;
+}
+
+body.dark .my-orders-order p {
+    color: #ddd;
+}
+
+body.dark .my-orders-order button {
+    background-color: #f7872d;
+}
+
+body.dark .my-orders-order button:hover {
+    background-color: #d66a12;
+}

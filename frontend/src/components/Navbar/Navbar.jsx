@@ -55,7 +55,7 @@ const Navbar = ({setShowLogin}) => {
                                 <CircleUser size={32} color="#f7872d" className="profile-icon" />
 
                                 <ul className="nav-profile-dropdown">
-                                    <li>
+                                    <li onClick={() => navigate('/myorders')} >
                                         <ShoppingBag size={20} color="#f7872d" />
                                         <p>Orders</p>
                                     </li>

@@ -29,29 +29,21 @@ const FoodItem = ({ id, name, price, description, image }) => {
 
             {/*  yaha pe add to cart karne ka feature hai */}
             {
-            !cartItems[id] 
-            ? (
+              !cartItems || !cartItems[id] ? (
                 <img
-                className="add-btn-inline"
-                onClick={() => addToCart(id)}
-                src={assets.add_icon_white}
-                alt="Add"
+                  className="add-btn-inline"
+                  onClick={() => addToCart(id)}
+                  src={assets.add_icon_white}
+                  alt="Add"
                 />
-            ) : (
+              ) : (
                 <div className="food-item-counter-inline">
-                <img
-                    onClick={() => removeFromCart(id)}
-                    src={assets.remove_icon_red}
-                    alt="Remove"
-                />
-                <p>{cartItems[id]}</p>
-                <img
-                    onClick={() => addToCart(id)}
-                    src={assets.add_icon_green}
-                    alt="Add"
-                />
+                  <img onClick={() => removeFromCart(id)} src={assets.remove_icon_red} alt="Remove" />
+                  <p>{cartItems[id]}</p>
+                  <img onClick={() => addToCart(id)} src={assets.add_icon_green} alt="Add" />
                 </div>
-            )}
+              )
+            }
         </div>
       </div>
     </div>
